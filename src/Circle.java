@@ -1,5 +1,7 @@
-public class Circle {
-    public double getRadius() {
+import com.sun.xml.internal.ws.encoding.MtomCodec;
+
+public class Circle extends Shape implements Resizeable{
+    private double getRadius() {
         return radius;
     }
 
@@ -7,34 +9,23 @@ public class Circle {
         this.radius = radius;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isFilled() {
-        return filled;
-    }
-
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-
     public double radius;
-    public String color;
-    public boolean filled;
-    public Circle(){}
-    public Circle(double radius){
+    public Circle(){
+
+    }
+    public Circle(String color,boolean filled,double radius){
+        super(color,filled);
         this.radius=radius;
     }
-    public Circle(double radius,String color,boolean filled){
-        this.color=color;
-        this.filled=filled;
+    public double getArea(){
+        return Math.PI*radius*radius;
+    }
+    public double getPerimeter(){
+        return 2*Math.PI*radius;
     }
 
-
-
+    @Override
+    public void resize(double percent) {
+        radius=radius*percent;
+    }
 }
