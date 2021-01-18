@@ -42,18 +42,15 @@ public class Rectangle extends Shape implements Resizeable {
 
     @Override
     public String toString() {
-        return "A Rectangle with width="
-                + getWidth()
-                + " and length="
-                + getLength()
-                + ", which is a subclass of "
-                + super.toString();
+        return "Area "
+                + getArea();
     }
 
-    @Override
-    public void resize(double percent) {
-         width=width*percent;
-         length=length*percent;
+        @Override
+        public void resize( double percent){
+            width = width * percent;
+            length = length * percent;
 
+        }
     }
-}
+

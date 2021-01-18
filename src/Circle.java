@@ -28,4 +28,9 @@ public class Circle extends Shape implements Resizeable{
     public void resize(double percent) {
         radius=radius*percent;
     }
+    @Override
+    public String toString(){
+        return "Area "
+                +getArea();
+    }
 }

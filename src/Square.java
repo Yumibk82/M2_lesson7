@@ -31,15 +31,13 @@ public class Square extends Rectangle implements Resizeable {
 
     @Override
     public String toString() {
-        return "A Square with side="
-                + getSide()
-                + ", which is a subclass of "
-                + super.toString();
+        return "Area "
+                + getArea();
     }
-
-    public void resize(double width,double length, double percent) {
-        setWidth(width*percent);
-        setLength(length*percent);
+    public void resize(double percent) {
+        setSide(getSide()*percent);
+//        setWidth(width*percent);
+//        setLength(length*percent);
 
     }
 }
